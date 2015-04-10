@@ -52,7 +52,7 @@ pip install dataset
 1. In your terminal, navigat to the repo's directory and run app.py
 ```
 cd [REPO LOCATION]
-python app.py
+python run.py
 ```
 
 2. Access app from localhost:5000
