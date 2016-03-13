@@ -1,9 +1,8 @@
-from app import app
-from flask import request
-from flask import render_template
-from flask import redirect
-from flask import url_for
+from flask import Flask, request, render_template, redirect, url_for
 import dataset
+
+app = Flask(__name__)
+
 # Connnect to database
 db = dataset.connect('sqlite:///file.db')
 
@@ -28,4 +27,6 @@ def submit():
     signature = dict(name=request.form['name'], message=request.form['message'])
     table.insert(signature)
     return redirect(url_for('guest_book'))
+
+app.run()
 
